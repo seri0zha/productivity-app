@@ -1,0 +1,14 @@
+.mainContainer {
+  grid-area: main;
+  padding: 35px; 
+}
+
+.mainContent {
+  margin: auto;
+  max-width: 768px;
+  height: 100%;
+}
+
+.title {
+  margin: 0;
+}

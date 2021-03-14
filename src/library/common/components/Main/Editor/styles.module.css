@@ -1,0 +1,13 @@
+.todoTextarea {
+  font-family: inherit;
+  width: 100%;
+  resize: vertical;
+  max-height: 200px;
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 5px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}

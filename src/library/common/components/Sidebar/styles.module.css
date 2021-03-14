@@ -1,0 +1,14 @@
+.sidebar {
+  color: #dcdcdc;
+  width: 250px;
+  grid-area: sidebar;
+  padding: 35px 0 0 35px;
+  background: #673ab7;
+  transition: all 0.1s linear;
+}
+
+.hidden {
+  width: 0;
+  padding-left: 0;
+  opacity: 0;
+}
