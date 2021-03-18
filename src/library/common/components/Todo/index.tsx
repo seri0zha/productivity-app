@@ -1,7 +1,6 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../main/store/mainReducer";
-import { editTodo } from "../../actions/Todo";
+import { useDispatch } from "react-redux";
+import { deleteTodo, editTodo } from "../../actions/Todo";
 import { TodoType } from "../../types";
 import styles from "./styles.module.css"
 
@@ -12,25 +11,29 @@ interface TodoProps{
 
 const Todo: React.FC<TodoProps> = (props: TodoProps) => {
   const dispatch = useDispatch();
-  const isCompleted: boolean = useSelector(
-    (state: RootState) => state.todo.todos[props.id].isCompleted
-  );
-
   const onCheckboxChange = () => {
     const newTodo = {...props.todo, isCompleted: !props.todo.isCompleted}
     dispatch(editTodo(props.id, newTodo));
   };
 
   return (
-    <div>
+    <div className={styles.todoElement}>
       <input 
+        className={styles.checkbox}
         type="checkbox" 
-        checked={isCompleted}
+        checked={props.todo.isCompleted}
         onChange={onCheckboxChange}
         />
-      <span className={`${styles.todoText} ${(isCompleted ? styles.completed : "")}`}>
+      <div className={`${styles.todoText} ${(props.todo.isCompleted ? styles.completed : "")}`}>
         {props.todo.text}
-      </span>
+      </div>
+      <div className={styles.buttonGroup}>
+        <button
+          onClick={() => dispatch(deleteTodo(props.id))}
+          >
+          delete
+        </button>
+      </div>
     </div>
   );
 }
