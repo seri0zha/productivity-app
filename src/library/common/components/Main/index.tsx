@@ -10,7 +10,6 @@ import styles from './styles.module.css';
 const Main: React.FC = () => {
 
   const todos: {[key: string]: TodoType} = useSelector((state: RootState) => state.todo.todos);
-
   return (
     <div className={styles.mainContainer}>
       <div className={styles.mainContent}>
@@ -30,7 +29,6 @@ const Main: React.FC = () => {
                 Today
               </h2>
             </div>
-            <Editor/>
           </Route>
         </Switch>
       </div>
