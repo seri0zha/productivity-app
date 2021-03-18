@@ -1,5 +1,5 @@
 import uniqid from "uniqid";
-import { ADD_TODO, EDIT_TODO } from "../constants/Todo";
+import { ADD_TODO, DELETE_TODO, EDIT_TODO } from "../constants/Todo";
 import { TodoType } from "../types";
 
 interface TodoState {
@@ -10,13 +10,8 @@ interface TodoState {
 }
 
 const initialState: TodoState = {
-  todos: {
-    "1": {text: "To do a todo list", isCompleted: false, date: new Date()},
-    "2": {text: "One more simple todo", isCompleted: false, date: new Date()},
-  },
-  categories: [
-    
-  ]
+  todos: {},
+  categories: []
 };
 
 const todoReducer = (state = initialState, action: any) => {
@@ -39,6 +34,15 @@ const todoReducer = (state = initialState, action: any) => {
           [action.payload.id]: action.payload.todo,
         }
       }
+    case DELETE_TODO: {
+      let newState = {
+        ...state,
+        todos: {...state.todos}
+      };
+      // removes todo by id from action payload
+      delete newState.todos[action.payload];
+      return newState;
+    }
     default: 
       return state;
   }
