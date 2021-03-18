@@ -4,5 +4,14 @@
 }
 
 .todoText {
-  
+  margin-left: 5px;
+}
+
+.todoElement {
+  display: flex;
+  margin: 10px 0;
+}
+
+.buttonGroup {
+  margin-left: auto;
 }

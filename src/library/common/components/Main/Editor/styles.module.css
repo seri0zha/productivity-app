@@ -9,5 +9,22 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
 
+.addTodoButton {
+  border: none;
+  padding: 5px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1em;
+  color: #777;
+}
+
+.addTodoButton:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.addButtonIcon {
+  width: 50px;
 }
