@@ -1,6 +1,8 @@
 .header {
+  height: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   grid-area: header;
   padding: 0 35px;
   background-color: #320b86;

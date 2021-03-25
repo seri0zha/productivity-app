@@ -4,14 +4,37 @@
 }
 
 .todoText {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .todoElement {
   display: flex;
-  margin: 10px 0;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .buttonGroup {
   margin-left: auto;
+}
+
+.date {
+  color: #aaa;
+  margin-left: 10px;
+}
+
+.todoSideButton {
+  color: #8258ca;
+  background-color: transparent;
+  border: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.todoSideButton:hover {
+  color: #320b86;
+}
+
+.deleteIcon {
+  width: 100%;
+  height: 100%;
 }

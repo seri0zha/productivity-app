@@ -1,19 +1,44 @@
 .todoTextarea {
   font-family: inherit;
   width: 100%;
-  resize: vertical;
-  max-height: 200px;
+  resize: none;
   border: 1px solid rgb(194, 194, 194);
   border-radius: 5px;
-
+  outline: none;
+  padding: 10px;
+  margin: 10px 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
+}
+
+.todoTextarea:focus {
+  border: 1px solid #333;
+}
+
+.editorButton {
+  display: inline-block;
+  background-color: #855bce;
+  margin-right: 5px;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+}
+
+.editorButton:hover:enabled {
+  background-color: #673ab7;
+  cursor: pointer;
+}
+
+.editorButton:disabled {
+  opacity: 0.5;
 }
 
 .addTodoButton {
   border: none;
-  padding: 5px;
+  margin-top: 10px;
   background-color: transparent;
   font-family: inherit;
   font-size: 1em;

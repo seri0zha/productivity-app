@@ -15,7 +15,7 @@ const Header: React.FC = () => {
     toggleCollapsed
   }, dispatch);
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <button 
         className={styles.menuButton} 
         onClick={() => boundActionCreators.toggleCollapsed()}
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
       <button onClick={() => boundActionCreators.setLoggedIn(false)}>
         LOG OUT
       </button>
-    </div>
+    </header>
   );
 }
 

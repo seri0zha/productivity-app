@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router';
 import { RootState } from '../../../../main/store/mainReducer';
 import { TodoType } from '../../types';
 import Todo from '../Todo';
-import Editor from './Editor';
+import Editor from '../Editor';
 import styles from './styles.module.css';
 
 const Main: React.FC = () => {
@@ -15,20 +15,16 @@ const Main: React.FC = () => {
       <div className={styles.mainContent}>
         <Switch>
           <Route path="/general">
-            <div>
-              <h2 className={styles.title}>
-                General
-              </h2>
-              {Object.keys(todos).map((key: string) => <Todo key={key} id={key} todo={todos[key]}/>)}
-              <Editor/>
-            </div>
+            <h2 className={styles.title}>
+              General
+            </h2>
+            {Object.keys(todos).map((key: string) => <Todo key={key} id={key} todo={todos[key]}/>)}
+            <Editor/>
           </Route>
           <Route path="/">
-            <div>
-              <h2 className={styles.title}>
-                Today
-              </h2>
-            </div>
+            <h2 className={styles.title}>
+              Today
+            </h2>
           </Route>
         </Switch>
       </div>
