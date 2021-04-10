@@ -1,0 +1,31 @@
+
+.dropdownWrapper {
+  position: relative;
+  float: right;
+}
+
+.dropdownList {
+  position: absolute;
+  background-color: #320b86;
+  right: 0;
+  min-width: 100px;
+  text-align: center;
+  padding: 5px;
+}
+
+.dropdownElement {
+  border: 0;
+  background-color: transparent;
+  color: #ddd;
+  width: 100%;
+}
+
+.dropdownElement:hover {
+  color: white;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

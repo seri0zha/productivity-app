@@ -9,7 +9,7 @@ interface CheckButtonProps {
 const CheckButton: React.FC<CheckButtonProps> = (props: CheckButtonProps) => {
   return (
     <button 
-      className={`${styles.checkButton} ${props.checked ? styles.checked: ''}`} 
+      className={styles.checkButton} 
       onClick={props.onClick}>
       {props.checked ? <ImCheckmark/> : ''}
     </button>

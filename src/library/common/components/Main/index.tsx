@@ -14,17 +14,22 @@ const Main: React.FC = () => {
     <div className={styles.mainContainer}>
       <div className={styles.mainContent}>
         <Switch>
-          <Route path="/general">
+          <Route path="/today">
+            <h2 className={styles.title}>
+              Today
+            </h2>
+          </Route>
+          <Route path="/history">
+            <h2 className={styles.title}>
+              History
+            </h2>
+          </Route>
+          <Route path="/">
             <h2 className={styles.title}>
               General
             </h2>
             {Object.keys(todos).map((key: string) => <Todo key={key} id={key} todo={todos[key]}/>)}
             <Editor/>
-          </Route>
-          <Route path="/">
-            <h2 className={styles.title}>
-              Today
-            </h2>
           </Route>
         </Switch>
       </div>

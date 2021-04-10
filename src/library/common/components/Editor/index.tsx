@@ -3,7 +3,9 @@ import styles from "./styles.module.css"
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import { addTodo } from "../../actions/Todo";
-import { BsPlus } from "react-icons/bs";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { IconContext } from "react-icons/lib";
+
 const Editor: React.FC = () => {
   const [editorIsDisplayed, setEditorIsDisplayed] = useState(false);
   const dispatch = useDispatch();
@@ -36,38 +38,42 @@ const Editor: React.FC = () => {
 
   return (
   <>
-      {editorIsDisplayed ? 
-      <div>
-        <form onSubmit={formik.handleSubmit}>
-          <textarea
-            onKeyDown={(e) => onTextAreaKeyDown(e)}
-            spellCheck="false"
-            placeholder="To do something..."
-            className={styles.todoTextarea}
-            value={formik.values.todoText} 
-            onChange={formik.handleChange} 
-            name='todoText'>
-          </textarea>
-          <input 
-            className={styles.editorButton}
-            disabled={!formik.values.todoText}
-            type="submit"
-            value="Add todo"/>
-          <button 
-            className={styles.editorButton}
-            onClick={onCancelButtonClick}>
-            Cancel
-          </button>
-        </form>
-      </div> :
-      <button
-        className={styles.addTodoButton}
-        onClick={() => setEditorIsDisplayed(true)}
-        >
-        <BsPlus/>
+    {editorIsDisplayed ? 
+    <div>
+      <form onSubmit={formik.handleSubmit}>
+        <textarea
+          onKeyDown={onTextAreaKeyDown}
+          spellCheck="false"
+          placeholder="To do something..."
+          className={styles.todoTextarea}
+          value={formik.values.todoText} 
+          onChange={formik.handleChange} 
+          name='todoText'>
+        </textarea>
+        <input 
+          className={styles.editorButton}
+          disabled={!formik.values.todoText}
+          type="submit"
+          value="Add todo"/>
+        <button 
+          className={styles.editorButton}
+          onClick={onCancelButtonClick}>
+          Cancel
+        </button>
+      </form>
+    </div> :
+    <button
+      className={styles.addTodoButton}
+      onClick={() => setEditorIsDisplayed(true)}
+      >
+      <IconContext.Provider value={{className: styles.addButtonIcon}}>
+        <IoIosAddCircleOutline/>
+      </IconContext.Provider>
+      <span>
         Add todo
-      </button>}
-    </>
+      </span>
+    </button>}
+  </>
   );
 }
 

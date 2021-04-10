@@ -13,6 +13,10 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
   const setLoggedIn = bindActionCreators(setLoggedInAC, dispatch);
   
+  const onLoginButtonClick = () => {
+    setLoggedIn(true);
+  }
+
   return isLoggedIn ? (
     <>
       <div className={styles.app}>
@@ -24,7 +28,7 @@ const App: React.FC = () => {
   ) : (
     <div>
       LOG IN PLEASE
-      <button onClick={() => setLoggedIn(true)}>
+      <button onClick={onLoginButtonClick}>
         LOG IN
       </button>
     </div>

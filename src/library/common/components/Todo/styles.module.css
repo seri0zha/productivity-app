@@ -3,22 +3,29 @@
   color: #888;
 }
 
-.todoText {
-  margin-left: 10px;
-}
-
 .todoElement {
   display: flex;
-  align-items: center;
+  align-items: top;
   margin-top: 10px;
+  word-break: break-all;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.todoElement:hover {
+  cursor: pointer;
+}
+
+.todoElement:hover .buttonGroup {
+  visibility: visible;
 }
 
 .buttonGroup {
+  visibility: hidden;
   margin-left: auto;
 }
 
 .date {
-  color: #aaa;
+  color: #aaaaaa;
   margin-left: 10px;
 }
 

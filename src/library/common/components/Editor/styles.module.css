@@ -37,6 +37,8 @@
 }
 
 .addTodoButton {
+  display: flex;
+  align-items: center;
   border: none;
   margin-top: 10px;
   background-color: transparent;
@@ -47,9 +49,11 @@
 
 .addTodoButton:hover {
   cursor: pointer;
-  color: black;
+  color: #320b86;
 }
 
 .addButtonIcon {
-  width: 50px;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
 }
