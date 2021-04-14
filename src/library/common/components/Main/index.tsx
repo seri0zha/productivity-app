@@ -7,9 +7,17 @@ import Todo from '../Todo';
 import Editor from '../Editor';
 import styles from './styles.module.css';
 
+const getFormattedDate = (date: Date): string => {
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth()+1).toString().padStart(2, '0');
+  const fullYear = date.getFullYear().toString();
+  return `${day}.${month}.${fullYear}`;
+}
+
 const Main: React.FC = () => {
 
   const todos: {[key: string]: TodoType} = useSelector((state: RootState) => state.todo.todos);
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.mainContent}>
@@ -18,6 +26,10 @@ const Main: React.FC = () => {
             <h2 className={styles.title}>
               Today
             </h2>
+            {getFormattedDate(new Date())}
+            {Object.keys(todos)
+                .filter(key => getFormattedDate(todos[key].date) === getFormattedDate(new Date()))
+                .map((key: string) => <Todo key={key} id={key} todo={todos[key]}/>)}
           </Route>
           <Route path="/history">
             <h2 className={styles.title}>
