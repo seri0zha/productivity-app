@@ -5,6 +5,8 @@ import { useFormik } from "formik";
 import { addTodo } from "../../actions/Todo";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IconContext } from "react-icons/lib";
+import EditArea from "../EditArea";
+import EditorButton from "../EditorButton";
 
 const Editor: React.FC = () => {
   const [editorIsDisplayed, setEditorIsDisplayed] = useState(false);
@@ -32,7 +34,9 @@ const Editor: React.FC = () => {
   const onTextAreaKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      formik.submitForm();
+      if (formik.values.todoText) {
+        formik.submitForm();
+      }
     }
   };
 
@@ -41,25 +45,19 @@ const Editor: React.FC = () => {
     {editorIsDisplayed ? 
     <div>
       <form onSubmit={formik.handleSubmit}>
-        <textarea
-          onKeyDown={onTextAreaKeyDown}
-          spellCheck="false"
-          placeholder="To do something..."
-          className={styles.todoTextarea}
+        <EditArea 
           value={formik.values.todoText} 
-          onChange={formik.handleChange} 
-          name='todoText'>
-        </textarea>
-        <input 
-          className={styles.editorButton}
-          disabled={!formik.values.todoText}
+          onChange={formik.handleChange}
+          name='todoText'
+          onTextAreaKeyDown={onTextAreaKeyDown}/>
+        <EditorButton 
+          text="Add todo"
           type="submit"
-          value="Add todo"/>
-        <button 
-          className={styles.editorButton}
-          onClick={onCancelButtonClick}>
-          Cancel
-        </button>
+          disabled={!formik.values.todoText}/>
+        <EditorButton 
+          text="Cancel"
+          type="button"
+          onClick={onCancelButtonClick}/>
       </form>
     </div> :
     <button

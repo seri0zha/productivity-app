@@ -21,3 +21,12 @@ input[type="reset"]::-moz-focus-inner {
   padding: 0;
   border: 0 none;
 } */
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+}

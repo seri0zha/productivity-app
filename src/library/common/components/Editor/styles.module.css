@@ -17,25 +17,6 @@
   border: 1px solid #333;
 }
 
-.editorButton {
-  display: inline-block;
-  background-color: #855bce;
-  margin-right: 5px;
-  border: 0;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: white;
-}
-
-.editorButton:hover:enabled {
-  background-color: #673ab7;
-  cursor: pointer;
-}
-
-.editorButton:disabled {
-  opacity: 0.5;
-}
-
 .addTodoButton {
   display: flex;
   align-items: center;
