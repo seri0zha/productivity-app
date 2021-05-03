@@ -4,7 +4,11 @@ import { setLoggedIn } from "../../../actions/Auth";
 import useOutsideClick from "../../../hooks/useOutsideCallback";
 import styles from "./styles.module.css";
 
-const DropdownList = () => {
+interface DropdownProps {
+  userName: string,
+}
+
+const DropdownList: React.FC<DropdownProps> = (props) => {
   const dropdownRef = useRef(null);
   const dispatch = useDispatch();
   const [dropdownListIsCollapsed, setDropdownListIsCollapsed] = useState(true);
@@ -25,7 +29,7 @@ const DropdownList = () => {
     <div className={styles.dropdownWrapper} ref={dropdownRef}>
         <div className={styles.titleWrapper}>
           <button className={styles.dropdownElement} onClick={toggleDropdown}>
-           Sergey Ivanov
+           {props.userName}
           </button>
         </div>
         {!dropdownListIsCollapsed ? 

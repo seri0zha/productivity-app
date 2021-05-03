@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <HiMenu/>
         </IconContext.Provider>
       </button>
-      <DropdownList/>
+      <DropdownList userName={"Sergey Ivanov"}/>
     </header>
   );
 }
