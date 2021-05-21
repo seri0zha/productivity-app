@@ -1,6 +1,6 @@
 import React, {useState, useRef} from "react";
 import { useDispatch } from "react-redux";
-import { setLoggedIn } from "../../../actions/Auth";
+import { setLoggedIn } from "../../../store/actions/Auth";
 import useOutsideClick from "../../../hooks/useOutsideCallback";
 import styles from "./styles.module.css";
 

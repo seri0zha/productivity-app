@@ -1,5 +1,5 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO } from "../constants/Todo";
-import { TodoType } from "../types";
+import { TodoType } from "../../types/types";
 
 export const addTodo = (todo: TodoType) => ({
   type: ADD_TODO,

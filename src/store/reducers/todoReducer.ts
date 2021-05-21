@@ -1,6 +1,6 @@
 import uniqid from "uniqid";
 import { ADD_TODO, DELETE_TODO, EDIT_TODO } from "../constants/Todo";
-import { TodoType } from "../types";
+import { TodoType } from "../../types/types";
 
 interface TodoState {
   todos: {

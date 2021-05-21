@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import authReducer from "../../library/common/reducers/authReducer";
-import sidebarReducer from "../../library/common/reducers/sidebarReducer";
-import todoReducer from "../../library/common/reducers/todoReducer";
+import authReducer from "./reducers/authReducer";
+import sidebarReducer from "./reducers/sidebarReducer";
+import todoReducer from "./reducers/todoReducer";
 
 const mainReducer = combineReducers({
   auth: authReducer,

@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { HiMenu } from 'react-icons/hi';
 import { IconContext } from 'react-icons/lib';
 import { useDispatch } from 'react-redux';
-import { toggleCollapsed } from '../../actions/Sidebar';
+import { toggleCollapsed } from '../../store/actions/Sidebar';
 import DropdownList from './DropdownList';
 
 const Header: React.FC = () => {

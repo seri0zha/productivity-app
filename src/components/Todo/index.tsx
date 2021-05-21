@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTodo, editTodo } from "../../actions/Todo";
-import { TodoType } from "../../types";
+import { deleteTodo, editTodo } from "../../store/actions/Todo";
+import { TodoType } from "../../types/types";
 import CheckButton from "../CheckButton";
 import styles from "./styles.module.css"
 import { FiDelete } from "react-icons/fi";

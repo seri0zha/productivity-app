@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../../main/store/mainReducer';
+import { RootState } from '../../store/mainReducer';
 import List from './List';
 import styles from './styles.module.css';
 

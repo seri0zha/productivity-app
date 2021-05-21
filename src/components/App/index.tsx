@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../../main/store/mainReducer';
-import Auth from '../Auth';
+import AuthContainer from '../../containers/Auth';
+import MainContainer from '../../containers/Main';
+import { RootState } from '../../store/mainReducer';
 import Header from '../Header';
-import Main from '../Main';
 import Sidebar from '../Sidebar';
 import styles from './styles.module.css';
 
@@ -13,10 +13,10 @@ const App: React.FC = () => {
     <div className={styles.app}>
       <Header/>
       <Sidebar/>
-      <Main/>
+      <MainContainer/>
     </div>
   ) : (
-    <Auth/>
+    <AuthContainer/>
   );
 }
 
