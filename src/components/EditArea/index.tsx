@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, { RefObject, useRef, useState} from "react";
 import EditorButton from "../EditorButton";
 import styles from "./styles.module.css";
-import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
+import Calendar from "react-calendar";
+import useOutsideClick from "../../hooks/useOutsideCallback";
 
 interface EditAreaProps {
   value: string,
@@ -13,7 +14,7 @@ interface EditAreaProps {
 
 const EditArea: React.FC<EditAreaProps> = (props) => {
   const [calendarIsDisplayed, setCalendarIsDisplayed] = useState(false);
-
+  const calendarRef: RefObject<HTMLDivElement> = useRef(null);
   const toggleCalendar = () => {
     setCalendarIsDisplayed(prevstate => !prevstate);
   }
@@ -21,6 +22,8 @@ const EditArea: React.FC<EditAreaProps> = (props) => {
   const onDateSelect = () => {
     setCalendarIsDisplayed(false);
   }
+
+  useOutsideClick(calendarRef, () => setCalendarIsDisplayed(false));
 
   return (
     <div className={styles.editAreaWrapper}>
@@ -41,8 +44,8 @@ const EditArea: React.FC<EditAreaProps> = (props) => {
           text="Today"
           />
           {calendarIsDisplayed &&
-          <div className={styles.calendar}>
-            <Calendar 
+          <div ref={calendarRef} className={styles.calendar}>
+            <Calendar
               onChange={onDateSelect}/>
           </div>}
       </div>
