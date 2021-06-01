@@ -1,4 +1,4 @@
-import { SET_LOGGED_IN } from "../constants/Auth";
+import { SET_LOGGED_IN } from "../constants/Login";
 
 interface IAction {
   type: string,

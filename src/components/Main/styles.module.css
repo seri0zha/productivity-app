@@ -1,6 +1,6 @@
-.mainContainer {
-  grid-area: main;
+.gridWrapper {
   padding: 35px; 
+  grid-area: main;
 }
 
 .mainContent {

@@ -3,10 +3,11 @@ import EditorButton from "../EditorButton";
 import styles from "./styles.module.css";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
+
 interface EditAreaProps {
   value: string,
   name: string,
-  onChange: any, // FIX THIS
+  onChange: (e: React.ChangeEvent) => void, 
   onTextAreaKeyDown: (e: React.KeyboardEvent) => void,
 }
 

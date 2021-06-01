@@ -15,19 +15,13 @@ const getFormattedDate = (date: Date): string => {
 const MainContainer: React.FC = () => {
 
   const todos: {[key: string]: TodoType} = useSelector((state: RootState) => state.todo.todos);
-
-  const allTodosElement = Object.keys(todos).map((key: string) => <Todo key={key} id={key} todo={todos[key]}/>)
-  
+  const allTodosElement = Object.keys(todos).map((key: string) => <Todo key={key} id={key} todo={todos[key]}/>);
   const todayTodosElement = Object.keys(todos)
     .filter(key => getFormattedDate(todos[key].date) === getFormattedDate(new Date()))
     .map((key: string) => <Todo key={key} id={key} todo={todos[key]}/>)
    
   return (
-    <Main 
-      currentDate={getFormattedDate(new Date())}
-      allTodosElement={allTodosElement}
-      todayTodosElement={todayTodosElement}
-      />
+    <Main />
   );
 }
 
