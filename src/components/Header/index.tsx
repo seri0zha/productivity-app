@@ -4,7 +4,7 @@ import { HiMenu } from 'react-icons/hi';
 import { IconContext } from 'react-icons/lib';
 import { useDispatch } from 'react-redux';
 import { toggleCollapsed } from '../../store/actions/Sidebar';
-import DropdownList from './DropdownList';
+import ProfileButton from './ProfileButton';
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <HiMenu/>
         </IconContext.Provider>
       </button>
-      <DropdownList userName={"Sergey Ivanov"}/>
+      <ProfileButton/>
     </header>
   );
 }
